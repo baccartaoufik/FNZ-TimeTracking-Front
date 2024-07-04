@@ -1,0 +1,78 @@
+:root {
+  --gradient-bg: linear-gradient(119.75deg, #6101FD 15.03%, #EE6B85 87.48%, #FDCC01 114.49%);
+}
+
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.login-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: var(--gradient-bg);
+  background-size: 200% 200%;
+  animation: gradient-animation 10s ease infinite;
+  color: #fff;
+}
+
+.logo {
+  width: 600px;
+  margin-bottom: 20px;
+}
+
+.button {
+  background-color: #1e3146;
+  color: white;
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: bold;
+  text-transform: none;
+  border-radius: 30px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  margin: 10px;
+}
+
+.button:hover {
+  background-color: #c4855b;
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+  transform: translateY(-2px);
+}
+
+.camera-icon {
+  margin-right: 10px;
+}
+
+.error-message {
+  color: #ff4d4f;
+  margin-top: 20px;
+  font-weight: bold;
+}
+
+.modal-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  outline: none;
+}
+
+.webcam {
+  border: 5px solid #1e3146;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
