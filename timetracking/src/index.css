@@ -4,10 +4,41 @@ body {
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
+  background: var(--primary-bg);
+  background-size: 200% 200%;
+  animation: gradient-animation 5s ease infinite;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+:root {
+  --primary-bg: linear-gradient(119.75deg, #000000 15.03%, #FFFFFF 45%, #595959 75%, #F2F2F2 114.49%);
+  --button-bg: #131313;
+  --button-hover-bg: #373535f2;
+  --button-text-color: white;
+}
+
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+
+.main-content {
+  margin-left: 0;
+  transition: margin-left 0.3s ease;
+}
+
+.main-content.sidebar-open {
+  margin-left: 250px;
 }

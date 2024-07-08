@@ -1,0 +1,33 @@
+:root {
+   
+    --gradient-hover: linear-gradient(119.75deg, #373535 15.03%, #E0E0E0 45%, #A1A1A1 75%, #F2F2F2 114.49%);
+  }
+  
+  .button {
+    
+    color: white;
+    padding: 12px 24px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-transform: none;
+    border-radius: 30px;
+    border: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    margin: 10px;
+    cursor: pointer;
+  }
+  
+  .button:hover {
+    background: var(--gradient-hover);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px);
+  }
+  
+  .button-icon {
+    margin-right: 10px;
+    font-size: 1em;
+    padding-left: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
