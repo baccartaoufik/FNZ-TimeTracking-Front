@@ -30,7 +30,6 @@ const Login = () => {
     const imageSrc = webcamRef.current.getScreenshot();
     sendImageToBackend(imageSrc);
   };
-  const navigate = useNavigate();
 
 
   const sendImageToBackend = async (imageSrc) => {
@@ -56,7 +55,6 @@ const Login = () => {
       if (response.status === 200 && response.data.token) {
         setJwtToken(response.data.token);
         localStorage.setItem('token', response.data.token);
-        navigate('/dashboard');
         closeCamera();
       } else {
         setError('Login failed. Please try again.');
