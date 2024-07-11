@@ -1,0 +1,27 @@
+.dashboard {
+    display: grid;
+    grid-template-areas:
+      "navbar navbar"
+      "sidebar main";
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto 1fr;
+    height: 100vh;
+  }
+  
+  .navbar {
+    grid-area: navbar;
+  }
+  
+  .sidebar {
+    grid-area: sidebar;
+  }
+  
+  .main-content {
+    grid-area: main;
+    padding: 20px;
+    transition: margin-left 0.3s ease;
+  }
+  
+  .sidebar-open .main-content {
+    margin-left: 250px;
+  }
