@@ -1,12 +1,13 @@
 import React from 'react';
 import './navbar.css';
 import { FaUserCircle, FaSignOutAlt } from 'react-icons/fa';
+import logo from '../../images/fnz2.png'
 
 const Navbar = ({ toggleSidebar, pageName, username }) => {
   return (
     <nav className="navbar">
       <div className="navbar-grid">
-        <img src="images/fnz2.png" alt="FNZ Logo" className="navbar-logo" />
+        <img src={logo} alt="FNZ Logo" className="navbar-logo" />
         <button onClick={toggleSidebar} className="burger-button">☰</button>
         <h1 className="navbar-center">{pageName}</h1>
       </div>

@@ -2,7 +2,7 @@ import React from 'react';
 import './Sidebar.css';
 import { IconContext } from 'react-icons';
 import * as FaIcons from 'react-icons/fa';
-
+import logo from '../../images/yassine.jpg'
 const Sidebar = ({ isOpen, username, menuItems }) => {
   const getIcon = (iconName) => {
     const IconComponent = FaIcons[iconName];
@@ -12,7 +12,7 @@ const Sidebar = ({ isOpen, username, menuItems }) => {
   return (
     <div className={`sidebar ${isOpen ? 'open' : ''}`}>
       <div className="user-info">
-        <img src="./images/yassine.jpg" alt="User Avatar" className="user-avatar" />
+        <img src={logo} alt="User Avatar" className="user-avatar" />
         <p>{username}</p>
       </div>
       <ul className="sidebar-menu">
