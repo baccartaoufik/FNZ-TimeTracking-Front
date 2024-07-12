@@ -1,0 +1,43 @@
+.sidebar {
+    position: relative;
+    left: 0;
+    width: 250px;
+    height: 100%;
+    background-color: #595959;
+    color: #fff;
+    transition: width 0.3s ease;
+    overflow-y: auto;
+  }
+  
+  .sidebar:not(.open) {
+    width: 0;
+  }
+  .user-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  .user-avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+  }
+  
+  .sidebar-menu {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .sidebar-menu li {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    cursor: pointer;
+  }
+  
+  .menu-icon {
+    margin-right: 10px;
+  }
+  
