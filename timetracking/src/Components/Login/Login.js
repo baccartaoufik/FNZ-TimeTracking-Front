@@ -47,8 +47,7 @@ const Login = () => {
       const imageBlob = new Blob([uint8Array], { type: 'image/jpeg' });
       const formData = new FormData();
       formData.append('file', imageBlob, 'image.jpg');
-
-      const response = await axios.post('http://localhost:8081/auth/login', formData, {
+      const response = await axios.post('http://172.16.4.17:8081/auth/login', formData, {
         headers: {
           'Content-Type': 'multipart/form-data'
         }
