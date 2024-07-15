@@ -5,6 +5,7 @@ import Webcam from 'react-webcam';
 import Modal from 'react-modal';
 import axios from 'axios';
 import Button from '../Button/Button';
+import logo from '../../images/FNZ_Logo_1.png';
 import './Login.css';
 
 Modal.setAppElement('#root');
@@ -31,6 +32,7 @@ const Login = () => {
     sendImageToBackend(imageSrc);
   };
 
+  const navigate = useNavigate();
 
   const sendImageToBackend = async (imageSrc) => {
     setIsLoading(true);
@@ -45,7 +47,6 @@ const Login = () => {
       const imageBlob = new Blob([uint8Array], { type: 'image/jpeg' });
       const formData = new FormData();
       formData.append('file', imageBlob, 'image.jpg');
-
       const response = await axios.post('http://172.16.4.17:8081/auth/login', formData, {
         headers: {
           'Content-Type': 'multipart/form-data'
@@ -55,6 +56,7 @@ const Login = () => {
       if (response.status === 200 && response.data.token) {
         setJwtToken(response.data.token);
         localStorage.setItem('token', response.data.token);
+        navigate('/app/dashboard');
         closeCamera();
       } else {
         setError('Login failed. Please try again.');
@@ -69,7 +71,7 @@ const Login = () => {
 
   return (
     <div className="login-container">
-      <img src="./images/FNZ_Logo_1.png" alt="FNZ Logo" className="logo" />
+      <img src={logo} alt="FNZ Logo" className="logo" />
       <Button onClick={openCamera} icon={<FaCamera />}>
          Login
       </Button>
