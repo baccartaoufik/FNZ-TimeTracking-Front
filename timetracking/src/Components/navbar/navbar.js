@@ -13,7 +13,7 @@ const Navbar = ({ toggleSidebar, pageName, username }) => {
       </div>
       <div className="navbar-right">
         <button className="user-profile-button">
-          <FaUserCircle />
+        <FaUserCircle />
         </button>
         <button className="logout-button">
           <FaSignOutAlt />
