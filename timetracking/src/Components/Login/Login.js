@@ -4,7 +4,7 @@ import { FaCamera } from 'react-icons/fa';
 import Webcam from 'react-webcam';
 import Modal from 'react-modal';
 import axios from 'axios';
-import Button from '../Button/Button';
+import Button from '../Button_1/Button_1';
 import logo from '../../images/FNZ_Logo_1.png';
 import './Login.css';
 
@@ -47,7 +47,8 @@ const Login = () => {
       const imageBlob = new Blob([uint8Array], { type: 'image/jpeg' });
       const formData = new FormData();
       formData.append('file', imageBlob, 'image.jpg');
-      const response = await axios.post('http://172.16.4.17:8081/auth/login', formData, {
+
+      const response = await axios.post('http://localhost:8081/auth/login', formData, {
         headers: {
           'Content-Type': 'multipart/form-data'
         }
@@ -56,6 +57,11 @@ const Login = () => {
       if (response.status === 200 && response.data.token) {
         setJwtToken(response.data.token);
         localStorage.setItem('token', response.data.token);
+        const user = {
+          username: response.data.username,
+          photoUrl: response.data.photoUrl, 
+        };
+        localStorage.setItem('user', JSON.stringify(user));
         navigate('/app/dashboard');
         closeCamera();
       } else {

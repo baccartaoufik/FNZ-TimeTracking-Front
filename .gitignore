@@ -7,3 +7,27 @@
 /dataSources/
 /dataSources.local.xml
 .idea/
+
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+./timetracking/node_modules
+./timetracking/.pnp
+./timetracking/.pnp.js
+
+# testing
+./timetracking/coverage
+
+# production
+./timetracking/build
+
+# misc
+./timetracking.DS_Store
+./timetracking.env.local
+./timetracking.env.development.local
+./timetracking.env.test.local
+./timetracking.env.production.local
+
+./timetrackingnpm-debug.log*
+./timetrackingyarn-debug.log*
+./timetrackingyarn-error.log*
