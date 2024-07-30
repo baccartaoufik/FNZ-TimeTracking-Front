@@ -4,7 +4,7 @@ import { ThemeProvider, createTheme } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import Login from './Components/Login/Login';
 import Layout from './Components/Layout/Layout';
-
+import PrivateRoute from './PrivateRoute';
 
 const darkTheme = createTheme({
   palette: {
@@ -18,9 +18,16 @@ const App = () => {
       <CssBaseline />
       <Router>
         <div className="App">
-          <Routes>
+        <Routes>
             <Route path="/" element={<Login />} />
-            <Route path="/*" element={<Layout />} />
+            <Route
+              path="/*"
+              element={
+                <PrivateRoute>
+                  <Layout />
+                </PrivateRoute>
+                      }
+            />
           </Routes>
         </div>
       </Router>
